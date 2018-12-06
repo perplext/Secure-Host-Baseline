@@ -1,8 +1,8 @@
-# Secure Host Baseline
+# Windows Secure Host Baseline
 
-## About the Secure Host Baseline
+## About the Windows Secure Host Baseline
 
-The Secure Host Baseline (SHB) provides an automated and flexible approach for assisting the DoD in deploying the latest releases of Windows 10 using a framework that can be consumed by organizations of all sizes. 
+The Windows Secure Host Baseline (SHB) provides an automated and flexible approach for assisting the DoD in deploying the latest releases of Windows 10 using a framework that can be consumed by organizations of all sizes. 
 
 
 The DoD CIO issued a memo on [November 20, 2015](http://www.esi.mil/download.aspx?id=5542) directing Combatant Commands, Services, Agencies and Field Activities (CC/S/As) to rapidly deploy the Windows 10 operating system throughout their respective organizations with the objective of completing deployment by the end of January 2017. The Deputy Secretary of Defense issued a memo on [February 26, 2016](http://www.esi.mil/download.aspx?id=5543) directing the DoD to complete a rapid deployment and transition to Microsoft Windows 10 Secure Host Baseline by the end of January 2017.[[1](http://www.esi.mil/contentview.aspx?id=685)]
@@ -20,7 +20,7 @@ Using a [Secure Host Baseline](https://www.iad.gov/iad/library/ia-guidance/secur
 
 This repository hosts Group Policy objects, compliance checks, and configuration tools in support of the DoD Secure Host Baseline (SHB) framework for Windows 10. Administrators of [National Security Systems](https://www.iad.gov/iad/news/defining-a-national-security-system.cfm), such as those who are part of the [Defense Industrial Base](https://www.dhs.gov/defense-industrial-base-sector), can leverage this repository in lieu of access to the [DoD SHB framework for Windows 10](https://disa.deps.mil/ext/cop/iase/dod-images/Pages/Win10.aspx) which requires a Common Access Card (CAC) or Personal Identification Verification (PIV) smart card to access. 
 
-Questions or comments can be submitted to the [repository issue tracker](https://github.com/iadgov/Secure-Host-Baseline/issues) or posted on [Windows 10 Secure Host Baseline project](https://software.forge.mil/sf/projects/win10shb) forums on Software Forge which requires a CAC or PIV smart card to access.
+Questions or comments can be submitted to the [repository issue tracker](https://github.com/nsacyber/Windows-Secure-Host-Baseline/issues) or posted on [Windows 10 Secure Host Baseline project](https://software.forge.mil/sf/projects/win10shb) forums on Software Forge which requires a CAC or PIV smart card to access.
 
 ## Repository content
 
@@ -29,10 +29,8 @@ Questions or comments can be submitted to the [repository issue tracker](https:/
 * The [ActivClient folder](./ActivClient/README.md) contains  ActivClient [Computer](./ActivClient/Group%20Policy%20Objects/Computer/) policy for those who use smart card logons with ActivClient software.
 * The [Adobe Reader folder](./Adobe%20Reader/README.md) contains Adobe Reader DC [Computer](./Adobe%20Reader/Group%20Policy%20Objects/Computer/) and [User](./Adobe%20Reader/Group%20Policy%20Objects/User/) policies for the latest version of Adobe Reader DC.
 * The [AppLocker folder](./AppLocker/README.md) contains AppLocker [Computer](./AppLocker/Group%20Policy%20Objects/Computer/) policy for the latest version of Windows 10.
-* The [BitLocker folder](./BitLocker/README.md) contains BitLocker [Computer](./BitLocker/Group%20Policy%20Objects/Computer/) policy for the latest version of Windows 10.
 * The [Certificates folder](./Certificates/README.md) contains [Computer](./Certificates/Group%20Policy%20Objects/Computer/) policy for distributing the DoD Root and Intermediate Certificate Authorities.
 * The [Chrome folder](./Chrome/README.md) contains Chrome browser [Computer](./Chrome/Group%20Policy%20Objects/Computer/) policy for the latest version of Chrome.
-* The [EMET folder](./EMET/README.md) contains EMET 5.5 [Computer](./EMET/Group%20Policy%20Objects/Computer/) policy for any version of Windows.
 * The [Internet Explorer folder](./Internet%20Explorer/README.md) contains Internet Explorer 11 [Computer](./Internet%20Explorer/Group%20Policy%20Objects/Computer/) and [User](./Internet%20Explorer/Group%20Policy%20Objects/User/) policies for latest version of Windows 10.
 * The [Office folder](./Office/README.md) contains [Office 2013](./Office/Office%202013/) and [Office 2016](./Office/Office%202016/) policy.
 * The [Windows folder](./Windows/README.md) contains Windows 10 [User](./Windows/Group%20Policy%20Objects/User) and [Computer](./Windows/Group%20Policy%20Objects/Computer/) policies for the latest version of Windows 10.
@@ -42,11 +40,9 @@ Questions or comments can be submitted to the [repository issue tracker](https:/
 Scripts for aiding users with the SHB are located in the Scripts sub folders of each component. Scripts available for use so far:
 
 * [Adobe Reader](./Adobe%20Reader/Scripts/)
-* [BitLocker](./BitLocker/Scripts/)
 * [Certificates](./Certificates/Scripts/)
 * [Chrome](./Chrome/Scripts/)
 * [General](./Scripts/)
-* [Hardware](./Hardware/Scripts/)
 * [Windows](./Windows/Scripts/)
 
 ### Compliance checks
@@ -54,7 +50,6 @@ Nessus (aka [ACAS](http://www.disa.mil/cybersecurity/network-defense/acas) in th
 
 * [Adobe Reader DC](./Adobe%20Reader/Compliance/)
 * [Chrome](./Chrome/Compliance/)
-* [EMET](./EMET/Compliance/)
 * [Internet Explorer](./Internet%20Explorer/Compliance/)
 * [Windows](./Windows/Compliance/)
 * [Windows Firewall](./Windows%20Firewall/Compliance/)
@@ -73,7 +68,7 @@ To get started using the tools:
 
 ## Downloading the repository
 
-Download the [current code](https://github.com/iadgov/Secure-Host-Baseline/archive/master.zip) to your **Downloads** folder. It will be saved as **Secure-Host-Baseline-master.zip** by default.
+Download the [current code](https://github.com/nsacyber/Windows-Secure-Host-Baseline/archive/master.zip) to your **Downloads** folder. It will be saved as **Windows-Secure-Host-Baseline-master.zip** by default.
 
 ## Configuring the PowerShell environment
 The PowerShell commands are meant to run from a system with at least PowerShell 3.0 installed. PowerShell may need to be configured to run the commands.
@@ -91,7 +86,7 @@ Users will need to unblock the downloaded zip file since it will be marked as ha
 
 1. `cd $env:USERPROFILE` 
 1. `cd Downloads` 
-1. `Unblock-File -Path '.\Secure-Host-Baseline-master.zip'`
+1. `Unblock-File -Path '.\Windows-Secure-Host-Baseline-master.zip'`
 
 Running the PowerShell scripts inside the zip file without unblocking the file will result in the following warning:
 
@@ -103,7 +98,7 @@ Running the PowerShell scripts inside the zip file without unblocking the file w
 If the downloaded zip file is not unblocked before extracting it, then all the individual PowerShell files that were in the zip file will have to be unblocked. You will need to run the following command after Step 5 in the [Loading the code](#loading-the-code) section:
 
 ```
-Get-ChildItem -Path '.\Secure-Host-Baseline' -Recurse -Include '*.ps1','*.psm1' | Unblock-File -Verbose
+Get-ChildItem -Path '.\Windows-Secure-Host-Baseline' -Recurse -Include '*.ps1','*.psm1' | Unblock-File -Verbose
 ```
 
 See the [Unblock-File command's documentation](https://technet.microsoft.com/en-us/library/hh849924.aspx) for more information on how to use it.
@@ -112,11 +107,11 @@ See the [Unblock-File command's documentation](https://technet.microsoft.com/en-
 Now extract the downloaded zip file and load the PowerShell code used for apply the policies.
 
 1. Right click on the zip file and select **Extract All**
-1. At the dialog remove **Secure-Host-Baseline-master** from the end of the path since it will extract the files to a Secure-Host-Baseline-master folder by default
+1. At the dialog remove **Windows-Secure-Host-Baseline-master** from the end of the path since it will extract the files to a Windows-Secure-Host-Baseline-master folder by default
 1. Click the **Extract** button
-1. Rename the **Secure-Host-Baseline-master** folder to **Secure-Host-Baseline**
+1. Rename the **Windows-Secure-Host-Baseline-master** folder to **Windows-Secure-Host-Baseline**
 1. Open a PowerShell prompt as an administrator
-1. Import the [Group Policy PowerShell module](./Scripts/GroupPolicy.psm1) to load the code into the PowerShell session: `Import-Module -Name .\Secure-Host-Baseline\Scripts\GroupPolicy.psm1`
+1. Import the [Group Policy PowerShell module](./Scripts/GroupPolicy.psm1) to load the code into the PowerShell session: `Import-Module -Name .\Windows-Secure-Host-Baseline\Scripts\GroupPolicy.psm1`
 
 ### Applying the policies
 
@@ -128,7 +123,7 @@ The **Invoke-ApplySecureHostBaseline** command found in the [Group Policy PowerS
 
 Options for the command are:
 * **-Path** - Required. The path to the folder containing the downloaded and extracted GitHub SHB repository.
-* **-PolicyNames** - Required. The names of the policies to apply. Can be 1 or more policy names. Available names: 'ActivClient', 'Adobe Reader', 'AppLocker', 'BitLocker', 'Certificates', 'Chrome', 'EMET', 'Internet Explorer', 'Office 2013', 'Office 2016', 'Windows', 'Windows Firewall'.
+* **-PolicyNames** - Required. The names of the policies to apply. Can be 1 or more policy names. Available names: 'ActivClient', 'Adobe Reader', 'AppLocker', 'Certificates', 'Chrome', 'Internet Explorer', 'Office 2013', 'Office 2016', 'Windows', 'Windows Firewall'.
 * **-PolicyScopes** - Optional. The scope of the policies to apply. Available scopes: 'Computer', 'User'. Defaults to 'Computer','User'.
 * **-PolicyType** - Optional. The type of policies to apply. Available types: 'Domain', 'Local'. Defaults to 'Domain' when joined to a domain. Defaults to 'Local' when not joined to a domain.
 * **-PolicyMode** - Optional. The mode of policies to apply, if supported by the specific policy. For example, AppLocker supports audit and enforcement modes. Available modes: 'Audit', 'Enforced'. Defaults to 'Audit'.
@@ -136,14 +131,14 @@ Options for the command are:
 * **-ToolPath** - Optional. The path to the LGPO tool. Required when PolicyType is 'Local'.
 * **-UpdateTemplates** - Optional. Update Group Policy templates that correspond to the applied Group Policy objects.
 
-Type **man Invoke-ApplySecureHostBaseline** at a PowerShell prompt for more help and examples or submit a question to the [repository issue tracker](https://github.com/iadgov/Secure-Host-Baseline/issues).
+Type **man Invoke-ApplySecureHostBaseline** at a PowerShell prompt for more help and examples or submit a question to the [repository issue tracker](https://github.com/nsacyber/Windows-Secure-Host-Baseline/issues).
 
 #### Applying the SHB policies to a standalone system
 
 If applying the SHB policies to a standalone system (e.g. not joined to a domain), then download the [LGPO tool](https://msdnshared.blob.core.windows.net/media/TNBlogsFS/prod.evol.blogs.technet.com/telligent.evolution.components.attachments/01/4062/00/00/03/65/94/11/LGPO.zip) from [this Microsoft blog post](http://blogs.technet.com/b/secguide/archive/2016/01/21/lgpo-exe-local-group-policy-object-utility-v1-0.aspx) and extract the executable.
 
 ```
-Invoke-ApplySecureHostBaseline -Path '.\Secure-Host-Baseline' -PolicyNames 'Adobe Reader','AppLocker','Certificates','Chrome','EMET','Internet Explorer','Office 2013','Office 2016','Windows','Windows Firewall' -ToolPath '.\LGPO\lgpo.exe'
+Invoke-ApplySecureHostBaseline -Path '.\Windows-Secure-Host-Baseline' -PolicyNames 'Adobe Reader','AppLocker','Certificates','Chrome','Internet Explorer','Office 2013','Office 2016','Windows','Windows Firewall' -ToolPath '.\LGPO\lgpo.exe'
 ```
 
 #### Applying the SHB policies to a domain
@@ -151,7 +146,7 @@ Invoke-ApplySecureHostBaseline -Path '.\Secure-Host-Baseline' -PolicyNames 'Adob
 If applying the SHB policies to a domain, note that the Group Policy objects are only loaded into Active Directory. The policies are not linked to any OUs so the settings do not automatically take affect.
 
 ```
-Invoke-ApplySecureHostBaseline -Path '.\Secure-Host-Baseline' -PolicyNames 'Adobe Reader','AppLocker','Certificates','Chrome','EMET','Internet Explorer','Office 2013','Office 2016','Windows','Windows Firewall'
+Invoke-ApplySecureHostBaseline -Path '.\Windows-Secure-Host-Baseline' -PolicyNames 'Adobe Reader','AppLocker','Certificates','Chrome','Internet Explorer','Office 2013','Office 2016','Windows','Windows Firewall'
 ``` 
 
 ### Checking compliance
